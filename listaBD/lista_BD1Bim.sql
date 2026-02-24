@@ -116,11 +116,12 @@ INSERT INTO submissao VALUES
 (3, 2, 1, 3, '2024-02-01 10:30:00', 'AC', 150, 1100), 
 (4, 2, 3, 1, '2024-02-01 11:00:00', 'TLE', 3500, 4096);
 
+
 #1.Liste o nome das equipes e suas respectivas universidades. 
 select equipe.nome, universidade.nome from universidade,equipe;
 
 #2.Liste os competidores com semestre maior ou igual a 6. 
-select * from competidor where semestre >= 6;
+select nome,semestre from competidor where semestre >= 6;
 
 #3.Mostre os problemas classificados como “Fácil”.
 select * from problema where nivel = 'facil';
@@ -174,11 +175,7 @@ SET email = CONCAT(email, '@exemplo.com')
 WHERE email NOT LIKE '%@%';
 
 #16. Delete as submissões com resultado “TLE”.
+delete from submissao where resultado = 'TLE';
 
-
-
-
-
-
-
-
+#17. Delete os competidores que não pertencem a nenhuma equipe.
+delete from equipe where competidor.id_univ = universidade.id_univ and universidade.id_univ = equipe.id_univ;
