@@ -178,4 +178,14 @@ WHERE email NOT LIKE '%@%';
 delete from submissao where resultado = 'TLE';
 
 #17. Delete os competidores que não pertencem a nenhuma equipe.
-delete from equipe where competidor.id_univ = universidade.id_univ and universidade.id_univ = equipe.id_univ;
+delete FROM competidor 
+where id_comp not in (SELECT id_comp from membros_equipe);
+
+#18.Delete os problemas que nunca receberam submissões.
+delete from problema where id_prob not in (SELECT id_prob from submissao);
+
+#19. Delete equipes sem membros cadastrados
+delete from equipe where id_equipe not in (SELECT id_equipe from membro_equipe);
+
+#20. Delete universidades que não possuem equipes.
+delete from universidade where id_univ not in (SELECT id_univ from equipe);
