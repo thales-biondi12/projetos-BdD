@@ -14,8 +14,11 @@ Este repositório reúne atividades e projetos desenvolvidos para fortalecer con
 
 📂 Estrutura do Projeto
 projetos-BdD/
+
 ├── listas/ 
+
 ├── projeto_1bim/ 
+
 └── README.md
 
 📚 Conteúdos Abordados
