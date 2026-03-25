@@ -92,5 +92,7 @@ Rode as consultas para análise dos dados
 👨‍💻 Autores
 
 Thales Andrade Biondi
+
 Italo galvao
+
 Pedro antoniassi
