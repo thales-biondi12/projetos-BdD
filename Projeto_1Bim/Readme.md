@@ -12,11 +12,8 @@ O projeto foi desenvolvido como prática de Banco de Dados, aplicando conceitos 
 
 
            ##projeto5/
-
            │
-
            ├── Projeto_1Bim/       # Script principal do banco (tabelas e inserts)
-     
            ├── README.md
 
 🧠 Conteúdos Trabalhados
