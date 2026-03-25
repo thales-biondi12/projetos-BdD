@@ -9,29 +9,49 @@ Este projeto simula o funcionamento de um sistema de gerenciamento de condomíni
 O projeto foi desenvolvido como prática de Banco de Dados, aplicando conceitos de modelagem e consultas SQL.
 
 📂 Estrutura dos Projetos
+
 projeto5/
 │
-├── Projeto_1Bim/   # Script principal do banco (tabelas e inserts)
-├── listaBD/        # Consultas SQL (D1 até D10)
+├── Projeto_1Bim/  
+     # Script principal do banco (tabelas e inserts)
+├── listaBD/   
+     # Consultas SQL (D1 até D10)
 ├── README.md
+
 🧠 Conteúdos Trabalhados
+
 Criação de banco de dados (CREATE DATABASE)
+
 Criação de tabelas (CREATE TABLE)
+
 Relacionamentos (FOREIGN KEY)
+
 Inserção de dados (INSERT)
+
 Consultas (SELECT)
+
 Filtros (WHERE)
+
 Agrupamentos (GROUP BY, HAVING)
+
 Funções de agregação (COUNT, SUM)
+
 Auditoria de dados (conflitos e duplicidades)
+
 🎯 Objetivo
+
 Praticar modelagem de banco de dados
+
 Aplicar SQL em um cenário real
+
 Desenvolver consultas para análise de dados
+
 Simular um sistema de gestão condominial
+
 🚧 Status
 
 ✔️ Projeto finalizado
+
 📌 Possíveis melhorias futuras em regras de integridade e otimização
 
 👨‍💻 Autor
@@ -46,7 +66,9 @@ Pedro antoniassi
 
 Para executar o projeto, utilize um SGBD como o MySQL:
 
-mysql -u root -p < script.sql
+```bash
+mysql -u root -p < Projeto_1bim.sql
+```
 
 Ou copie e execute o script diretamente no MySQL Workbench.
 
