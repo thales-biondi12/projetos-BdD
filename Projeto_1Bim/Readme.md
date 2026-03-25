@@ -10,18 +10,14 @@ O projeto foi desenvolvido como prática de Banco de Dados, aplicando conceitos 
 
 📂 Estrutura dos Projetos
 
-projeto5/
-│
 
-├── Projeto_1Bim/  
-           
-            # Script principal do banco (tabelas e inserts)
-            
-├── listaBD/   
+           ##projeto5/
 
-     # Consultas SQL (D1 até D10)
+           │
+
+           ├── Projeto_1Bim/       # Script principal do banco (tabelas e inserts)
      
-├── README.md
+           ├── README.md
 
 🧠 Conteúdos Trabalhados
 
