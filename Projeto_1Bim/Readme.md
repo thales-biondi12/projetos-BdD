@@ -89,6 +89,8 @@ Execute o script SQL presente no projeto
 
 Rode as consultas para análise dos dados
 
-👨‍💻 Autor
+👨‍💻 Autores
 
 Thales Andrade Biondi
+Italo galvao
+Pedro antoniassi
