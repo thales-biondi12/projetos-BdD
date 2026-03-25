@@ -12,10 +12,15 @@ O projeto foi desenvolvido como prática de Banco de Dados, aplicando conceitos 
 
 projeto5/
 │
+
 ├── Projeto_1Bim/  
-     # Script principal do banco (tabelas e inserts)
+           
+            # Script principal do banco (tabelas e inserts)
+            
 ├── listaBD/   
+
      # Consultas SQL (D1 até D10)
+     
 ├── README.md
 
 🧠 Conteúdos Trabalhados
