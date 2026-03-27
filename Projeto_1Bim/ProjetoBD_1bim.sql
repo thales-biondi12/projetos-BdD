@@ -78,6 +78,7 @@ insert into moradores values
 (4, 'Italo', 'inquilino'),
 (5, 'Daniel', 'proprietario');
 
+
 insert into his_moradores values
 (1, 5, 4, '2018-08-26', '2022-12-01'),
 (2, 1, 5, '2014-02-06', '2025-06-22'),
@@ -117,42 +118,43 @@ insert into reservas values
 (3, 2, 'churrasqueira', '2026-03-20', '18:00:00', '22:00:00'), 
 (4, 4, 'quadra', '2026-03-21', '10:00:00', '12:00:00');
 
-#D1. Listar todas as unidades cadastradas e seu status (ocupada/vazia, se aplic ́avel).
+#D1. Listar todas as unidades cadastradas e seu status (ocupada/vazia, se aplicavel).
 
-select id_unidade, status_unidade from unidades;
+select id_unidade, status_unidade from unidades; #certo
 
 #D2. Exibir o historico de moradores de uma unidade informada (por identificador da unidade).
 
-select id_morador, data_inicio, data_fim from his_moradores where id_unidade = 1;
+select id_unidade, id_morador, data_inicio, data_fim from his_moradores where id_unidade = 1; #certo
 
 #D3. Listar moradores ativos no condomınio em ordem alfabetica.
 
-select nome from moradores where id_morador in (select id_morador from his_moradores where data_fim is null) order by nome; 
+select nome from moradores where id_morador in (select id_morador from his_moradores where data_fim is null) order by nome; #certo
 
 #D4. Listar reservas de uma  ́area comum em uma data informada.
 
-select area, data_reserva, horario_inicio, horario_fim, id_unidade from reservas where data_reserva = '2026-03-20';
+select area, data_reserva, horario_inicio, horario_fim, id_unidade from reservas where data_reserva = '2026-03-20'; #certo
 
-#D5. Verificar conflitos: reservas duplicadas para a mesma  ́area, data e hor ́ario (auditoria).
+#D5. Verificar conflitos: reservas duplicadas para a mesma  ́area, data e horario (auditoria).
 
-SELECT area, data_reserva, horario_inicio, horario_fim, COUNT(*) AS total_reservas FROM reservas GROUP BY area, data_reserva, horario_inicio, horario_fim HAVING COUNT(*) > 1;
+select area, data_reserva, horario_inicio, horario_fim, count(*) from reservas group by area, data_reserva, horario_inicio, horario_fim having count(*) > 1; #certo
 
 #D6. Exibir ocorrencias registradas em um intervalo de datas.
 
-select id_ocorrencia from ocorrencias where data_ocorrencia >='2026-01-05' and data_ocorrencia <= '2026-02-01';
+select id_ocorrencia from ocorrencias where data_ocorrencia >='2026-01-05' and data_ocorrencia <= '2026-02-01'; #certo
 
 #D7. Exibir total arrecadado em um mes (pagamentos confirmados no perıodo). 
 
-select valor_pago from pagamentos where  data_pagamento >= '2026-1-1' and data_pagamento <= '2026-1-31';#preciso fazer somar
+select sum(valor_pago) as total_arrecadado from pagamentos where  data_pagamento >= '2026-1-1' and data_pagamento <= '2026-1-31';#certo
 
 #D8. Listar unidades inadimplentes no mes (sem pagamento da cobranca do perıodo).
 
-select id_unidade from cobrancas where id_cobranca in(select id_cobranca from pagamentos where status = 'pendente');
+select id_unidade from cobrancas where id_cobranca in(select id_cobranca from pagamentos where status = 'pendente');#certo
 
 #D9. Exibir as 3 unidades com maior numero de ocorrencias no trimestre.
 
-select id_unidade, count(*) as total from ocorrencias where data_ocorrencia >= '2026-1-1' and data_ocorrencia <= '2026-3-31' group by id_unidade;
+select id_unidade, count(*) as total from ocorrencias where data_ocorrencia >= '2026-1-1' and data_ocorrencia <= '2026-3-31' group by id_unidade; #certo
 
 #D10. Listar unidades que tiveram mudanca de responsavel no semestre (com base no historico).
 
-select id_unidade from his_moradores where data_inicio >= '2026-1-1' and data_inicio <= '2026-6-1';
+select id_unidade from his_moradores where data_inicio >= '2026-01-01' and data_fim <= '2026-06-30' group by id_unidade having count(id_morador) > 1;
+
