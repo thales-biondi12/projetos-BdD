@@ -3,13 +3,13 @@ use projeto5;
 
 create table unidades(
 id_unidade int primary key,
-status_unidade varchar(15) #ocupada ou vazia
+status_unidade varchar(255) #ocupada ou vazia
 );
 
 create table moradores(
 id_morador int primary key,
-nome varchar(55) not null,
-ocupacao varchar(20) #proprietario ou inquilino
+nome varchar(255) not null,
+ocupacao varchar(255) #proprietario ou inquilino
 );
 
 create table his_moradores(
@@ -35,20 +35,20 @@ id_pagamento int primary key,
 id_cobranca int,
 data_pagamento date,
 valor_pago decimal(10, 2),
-status varchar(20),
+status varchar(255),
 foreign key(id_cobranca) references cobrancas(id_cobranca)
 );
 
 create table funcionarios(
 id_funcionario int primary key,
-nome varchar(55) not null
+nome varchar(255) not null
 );
 
 create table ocorrencias(
 id_ocorrencia int primary key,
 id_unidade int,
 id_funcionario int,
-motivo varchar(100),
+motivo varchar(255),
 data_ocorrencia date,
 foreign key(id_unidade) references unidades(id_unidade),
 foreign key(id_funcionario) references funcionarios(id_funcionario)
@@ -57,7 +57,7 @@ foreign key(id_funcionario) references funcionarios(id_funcionario)
 create table reservas(
 id_reserva int primary key,
 id_unidade int,
-area varchar(30),
+area varchar(255),
 data_reserva date,
 horario_inicio time,
 horario_fim time,
@@ -157,4 +157,3 @@ select id_unidade, count(*) as total from ocorrencias where data_ocorrencia >= '
 #D10. Listar unidades que tiveram mudanca de responsavel no semestre (com base no historico).
 
 select id_unidade from his_moradores where data_inicio >= '2026-01-01' and data_fim <= '2026-06-30' group by id_unidade having count(id_morador) > 1;
-
