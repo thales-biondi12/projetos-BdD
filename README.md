@@ -19,7 +19,6 @@ Este repositório reúne atividades e projetos desenvolvidos para fortalecer con
 **📂 Estrutura do Projeto**
 ```bash
 projetos-BdD/
-  ├── listas/ 
   ├── projeto_1bim/ 
   └── README.md
 ```
